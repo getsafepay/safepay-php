@@ -15,7 +15,7 @@ composer require matiullah31/safepay-php
 
 # Usage
 
-	Import and create a Safepay client by passing your config;
+Import and create a Safepay client by passing your config;
 
 ```
 use SafePay\SafePay;
@@ -48,7 +48,7 @@ $response = $SafePay->payments->getToken(['amount'=>1000,'currency'=>'PKR']);
 
 # Checkout 
 
-	Create checkout link
+Create checkout link
 
 
 ```
@@ -72,7 +72,7 @@ if( $link['result'] == 'success' ) {
 
 # Verification
 
-	Signature verification on success page.
+Signature verification on success page.
 
 ```
 
@@ -90,7 +90,7 @@ if( $SafePay->verify->signature($tracker,$signature)  === true) {
 
 # Webhook
 
-	Signature verification of Webhook post request
+Signature verification of Webhook post request
 
 ```
 $X_SFPY_SIGNATURE = @$_SERVER['HTTP_X_SFPY_SIGNATURE'];
