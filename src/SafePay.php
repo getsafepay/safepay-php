@@ -20,12 +20,7 @@ class SafePay
 
     public $verify;
 
-    private $validate_options = [
-    						'environment',
-    						'apiKey',
-    						'webhookSecret',
-    						'v1Secret'
-    						];
+    private $valid_options = ['environment','apiKey','webhookSecret','v1Secret'];
 
 
 
@@ -55,7 +50,7 @@ class SafePay
 
     private function validate(array $options) {
 
-    	foreach ($this->validate_options as $key => $option) {
+    	foreach ($this->valid_options as $key => $option) {
     		if( !isset($options[$option]) ) {
     			throw new \Exception("{$option} is missing in configuration", 1);
     			

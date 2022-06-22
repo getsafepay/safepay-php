@@ -8,12 +8,7 @@ class Checkout extends Base {
 
 	protected $options;
 
-	protected $validate_options = [
-									'token',
-									'order_id',
-									'success_url',
-									'cancel_url'
-								];
+	protected $valid_options = ['token','order_id','success_url','cancel_url'];
 
 
 	public function __construct($options) {
@@ -56,7 +51,7 @@ class Checkout extends Base {
 
 	private function validate(array $options) {
 
-    	foreach ($this->validate_options as $key => $option) {
+    	foreach ($this->valid_options as $key => $option) {
     		if( !isset($options[$option]) ) {
     			throw new \Exception("{$option} is missing.", 1);
     			
