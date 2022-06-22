@@ -1,4 +1,4 @@
-# safepay-php
+# Safepay PHP SDK
 
 	Official PHP SDK for [Safepay API](https://getsafepay.com/).
 
