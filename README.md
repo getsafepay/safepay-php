@@ -9,12 +9,6 @@ Official PHP SDK for [Safepay API](https://getsafepay.com/).
 ```
 composer require matiullah31/safepay-php
 
-OR 
-
-Download zip and import 
-
-require_once __DIR__.'/vendor/autoload.php';
-
 ```
 
 
