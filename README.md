@@ -82,7 +82,7 @@ $signature = $_POST['sig'];
 
 if( $SafePay->verify->signature($tracker,$signature)  === true) {
 
-	//Signature if valid
+	//Signature is valid
 }
 
 
