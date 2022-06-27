@@ -2,8 +2,6 @@
 
 Official PHP SDK for [Safepay API](https://getsafepay.com/).
 
-
-
 # Installation
 
 ```
@@ -11,14 +9,12 @@ composer require matiullah31/safepay-php
 
 ```
 
-
-
 # Usage
 
 Import and create a Safepay client by passing your config;
 
 ```
-use SafePay\SafePay;
+use Safepay\Safepay;
 
 $config = [
 	"environment" =>'sandbox',
@@ -27,32 +23,29 @@ $config = [
 	"webhookSecret" =>  '14509fdd8591a60427e'
 ];
 
-$SafePay = new SafePay($config);
+$Safepay = new Safepay($config);
 
 ```
 
 You can now create payments and checkout links.
 
-
 # Payments
 
 ```
 
-$response = $SafePay->payments->getToken(['amount'=>1000,'currency'=>'PKR']);
+$response = $Safepay->payments->getToken(['amount'=>1000,'currency'=>'PKR']);
 
 //$response['token'];
 // Pass `token` to create checkout link
 
 ```
 
-
-# Checkout 
+# Checkout
 
 Create checkout link
 
-
 ```
-$link = $SafePay->checkout->create([
+$link = $Safepay->checkout->create([
 	"token" => $response['token'],
 	"order_id" => 234,
 	"source"=>'custom',
@@ -69,7 +62,6 @@ if( $link['result'] == 'success' ) {
 
 ```
 
-
 # Verification
 
 Signature verification on success page.
@@ -80,7 +72,7 @@ $tracker = $_POST['tracker'];
 
 $signature = $_POST['sig'];
 
-if( $SafePay->verify->signature($tracker,$signature)  === true) {
+if( $Safepay->verify->signature($tracker,$signature)  === true) {
 
 	//Signature is valid
 }
@@ -98,12 +90,9 @@ $X_SFPY_SIGNATURE = @$_SERVER['HTTP_X_SFPY_SIGNATURE'];
 
 $data = file_get_contents('php://input');
 
-if( $SafePay->verify->webhook($data,$X_SFPY_SIGNATURE)  === true) {
+if( $Safepay->verify->webhook($data,$X_SFPY_SIGNATURE)  === true) {
 
 	//Web Hook request is valid
 }
 
 ```
-
-
-

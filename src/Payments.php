@@ -1,48 +1,45 @@
-<?php 
+<?php
 
-namespace SafePay;
+namespace Safepay;
 
-use SafePay\Lib\Requestor;
-use SafePay\Base;
+use Safepay\Lib\Requestor;
+use Safepay\Base;
 
-class Payments extends Base {
+class Payments extends Base
+{
 
-	protected $options;
-
-	
-	public function __construct(array $options) {
-
-		$this->options = $options;
-
-		$this->options['currency'] = $options['currency']??static::CURRENCY;
-
-	}
+    protected $options;
 
 
-	public function getToken(array $data) {
+    public function __construct(array $options)
+    {
 
-		try {
+        $this->options = $options;
 
-			$res = $this->create_charge($data);
+        $this->options['currency'] = $options['currency'] ?? static::CURRENCY;
+    }
 
-			if (!isset($res[0])) {
+
+    public function getToken(array $data)
+    {
+
+        try {
+
+            $res = $this->create_charge($data);
+
+            if (!isset($res[0])) {
                 return array('result' => $res[1]);
             }
 
-            return $res[1]['data']??[];
+            return $res[1]['data'] ?? [];
+        } catch (\Exception $e) {
 
-		}catch(\Exception $e) {
-
-			throw new \Exception($e->getMessage());
-			
-		}
-
+            throw new \Exception($e->getMessage());
+        }
+    }
 
 
-	}
-
-
-	 /**
+    /**
      * Create a new charge request.
      * @param  int    $amount
      * @param  string $currency
@@ -54,25 +51,20 @@ class Payments extends Base {
      * @return array
      */
     private function create_charge(array $data)
-    {	
+    {
 
-    	try {
-        $args["environment"] = $this->options['environment'];
+        try {
+            $args["environment"] = $this->options['environment'];
 
-        $args["amount"] = floatval($data['amount']);
+            $args["amount"] = floatval($data['amount']);
 
-        $args["currency"] = $this->options['currency'];
+            $args["currency"] = $this->options['currency'];
 
-         $args["client"] = $this->options['apiKey'];
-       
-    	}catch(\Exception $e){
-    		throw new \Exception($e->getMessage());
-    		
-    	}
+            $args["client"] = $this->options['apiKey'];
+        } catch (\Exception $e) {
+            throw new \Exception($e->getMessage());
+        }
 
         return Requestor::send_request($this->options['environment'], self::$init_transaction_endpoint, $args, 'POST');
-
     }
-
-
 }

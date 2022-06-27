@@ -1,11 +1,9 @@
-<?php 
+<?php
 
-namespace SafePay;
+namespace Safepay;
 
-
-
-abstract class Base {
-
+abstract class Base
+{
 
     const SANDBOX  = "sandbox";
     const PRODUCTION = "production";
@@ -22,6 +20,4 @@ abstract class Base {
 
     /** @var string Safepay production API url. */
     public static $production_api_url = 'https://api.getsafepay.com/';
-
-
 }

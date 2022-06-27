@@ -1,20 +1,20 @@
 {
-    "name": "matiullah31/safepay-php",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Matiullah",
-            "email": "mati_ullah31@yahoo.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": { 
-        "php": ">=7.4"
-    },
-    "autoload": {
+  "name": "matiullah31/safepay-php",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matiullah",
+      "email": "mati_ullah31@yahoo.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
     "psr-4": {
-      "SafePay\\": "src"
+      "Safepay\\": "src"
     }
   }
 }
