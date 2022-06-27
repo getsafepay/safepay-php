@@ -8,10 +8,10 @@ use Safepay\Base;
 class Requestor extends Base
 {
 
-
     public function __construct()
     {
     }
+
     /**
      * Get the response from an API request.
      * @param  string $endpoint
@@ -22,7 +22,7 @@ class Requestor extends Base
     public static function send_request($environment = "sandbox", $endpoint = "", $params = array(), $method = 'GET')
     {
 
-        $baseURL = $environment === self::SANDBOX ? self::$sandbox_api_url : self::$production_api_url;
+        $baseURL = $environment === self::SANDBOX ? self::SANDBOX_API_URL : self::PRODUCTION_API_URL;
         $url = $baseURL . $endpoint;
 
         $ch = curl_init();

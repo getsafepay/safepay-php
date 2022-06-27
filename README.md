@@ -21,6 +21,7 @@ $config = [
 	"apiKey" => 'sec_e9273e07a7ac',
 	"v1Secret" =>  'a73e5dad7cd8b1e7fea2f6d93f4c8',
 	"webhookSecret" =>  '14509fdd8591a60427e'
+	"channel" => 'accounts'   //optional
 ];
 
 $Safepay = new Safepay($config);

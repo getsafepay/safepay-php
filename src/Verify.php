@@ -2,21 +2,15 @@
 
 namespace Safepay;
 
-
-
 class Verify
 {
-
 	protected $options;
-
 
 	public function __construct($options)
 	{
 
-
 		$this->options  = $options;
 	}
-
 
 	/**
 	 *  verify safepay signature
@@ -36,7 +30,6 @@ class Verify
 
 		return hash_hmac('sha256', $tracker, $this->options['v1Secret']) === $signature;
 	}
-
 
 	/**
 	 * Verify Webhook request
@@ -59,8 +52,6 @@ class Verify
 
 		return hash_hmac('sha512', $this->getPayload($data_string), $this->options['webhookSecret']) === $x_sfpy_signature;
 	}
-
-
 
 	private function getPayload(string $data)
 	{

@@ -10,7 +10,6 @@ class Payments extends Base
 
     protected $options;
 
-
     public function __construct(array $options)
     {
 
@@ -18,7 +17,6 @@ class Payments extends Base
 
         $this->options['currency'] = $options['currency'] ?? static::CURRENCY;
     }
-
 
     public function getToken(array $data)
     {
@@ -37,7 +35,6 @@ class Payments extends Base
             throw new \Exception($e->getMessage());
         }
     }
-
 
     /**
      * Create a new charge request.
@@ -65,6 +62,6 @@ class Payments extends Base
             throw new \Exception($e->getMessage());
         }
 
-        return Requestor::send_request($this->options['environment'], self::$init_transaction_endpoint, $args, 'POST');
+        return Requestor::send_request($this->options['environment'], self::TRANSACTION_ENDPOINT, $args, 'POST');
     }
 }

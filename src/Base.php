@@ -6,18 +6,28 @@ abstract class Base
 {
 
     const SANDBOX  = "sandbox";
+
     const PRODUCTION = "production";
 
     const CURRENCY = 'PKR';
 
-    const PRODUCTION_CHECKOUT_URL = "https://www.getsafepay.com/components";
-    const SANDBOX_CHECKOUT_URL  = "https://sandbox.api.getsafepay.com/components";
+    const CHANNEL_ACCOUNTS = 'accounts';
 
-    public static $init_transaction_endpoint = "order/v1/init";
+    const CHANNEL_CARDS = 'cards';
 
-    /** @var string Safepay sandbox API url. */
-    public static $sandbox_api_url = 'https://sandbox.api.getsafepay.com/';
+    const CHANNELS = [self::CHANNEL_ACCOUNTS, self::CHANNEL_CARDS];
 
-    /** @var string Safepay production API url. */
-    public static $production_api_url = 'https://api.getsafepay.com/';
+    const PRODUCTION_BASE_URL = 'https://getsafepay.com';
+
+    const SANDBOX_BASE_URL = 'https://sandbox.api.getsafepay.com';
+
+    const ACCOUNTS_ROUTE = '/components';
+
+    const CARDS_ROUTE = '/checkout/pay';
+
+    const TRANSACTION_ENDPOINT = '/order/v1/init';
+
+    const  SANDBOX_API_URL = 'https://sandbox.api.getsafepay.com/';
+
+    const PRODUCTION_API_URL = 'https://api.getsafepay.com/';
 }
