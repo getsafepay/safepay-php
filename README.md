@@ -5,7 +5,7 @@ Official PHP SDK for [Safepay API](https://getsafepay.com/).
 # Installation
 
 ```
-composer require matiullah31/safepay-php
+composer require getsafepay/safepay-php
 
 ```
 

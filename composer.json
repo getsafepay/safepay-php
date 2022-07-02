@@ -1,7 +1,8 @@
 {
-  "name": "matiullah31/safepay-php",
+  "name": "getsafepay/safepay-php",
   "type": "library",
   "license": "MIT",
+  "description": "Official PHP SDK for Safepay API",
   "authors": [
     {
       "name": "Matiullah",
