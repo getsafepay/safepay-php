@@ -59,7 +59,7 @@ class Checkout extends Base
 			"order_id"       => $data['order_id'],
 			"redirect_url"   => $data['success_url'] ?? '',
 			"cancel_url"     => $data['cancel_url'] ?? '',
-			"webhooks"       => $data['webhooks'] ?? false,
+			"webhooks"       => $data['webhooks'] ?? 'false',
 		);
 
 		return $baseURL . "?" . http_build_query($params);
