@@ -50,7 +50,7 @@ $link = $Safepay->checkout->create([
 	"token" => $response['token'],
 	"order_id" => 234,
 	"source"=>'custom',
-	"webhooks"=>true,
+	"webhooks"=>'true',
 	"success_url" =>"url /success.php",
 	"cancel_url" => "url  /cancel.php"
 
