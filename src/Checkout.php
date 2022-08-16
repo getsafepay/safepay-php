@@ -51,7 +51,9 @@ class Checkout extends Base
 		$URL = $this->options['environment'] == self::SANDBOX ? self::SANDBOX_BASE_URL : self::PRODUCTION_BASE_URL;
 
 		$baseURL = $this->options['channel'] == self::CHANNEL_ACCOUNTS ? $URL . self::ACCOUNTS_ROUTE : $URL . self::CARDS_ROUTE;
-
+		
+		$webooks =  (bool) $data['webhooks'] ?? false;
+		
 		$params = array(
 			"env"            => $this->options['environment'] == self::SANDBOX ? self::SANDBOX : self::PRODUCTION,
 			"beacon"         => $data['token'],
@@ -59,7 +61,7 @@ class Checkout extends Base
 			"order_id"       => $data['order_id'],
 			"redirect_url"   => $data['success_url'] ?? '',
 			"cancel_url"     => $data['cancel_url'] ?? '',
-			"webhooks"       => $data['webhooks'] ?? 'false',
+			"webhooks"       => $webooks == true ? 'true':'false',
 		);
 
 		return $baseURL . "?" . http_build_query($params);
