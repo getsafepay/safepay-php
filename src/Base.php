@@ -11,12 +11,6 @@ abstract class Base
 
     const CURRENCY = 'PKR';
 
-    const CHANNEL_ACCOUNTS = 'accounts';
-
-    const CHANNEL_CARDS = 'cards';
-
-    const CHANNELS = [self::CHANNEL_ACCOUNTS, self::CHANNEL_CARDS];
-
     const PRODUCTION_BASE_URL = 'https://getsafepay.com';
 
     const SANDBOX_BASE_URL = 'https://sandbox.api.getsafepay.com';
