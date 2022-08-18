@@ -2,7 +2,7 @@
   "name": "getsafepay/safepay-php",
   "type": "library",
   "license": "MIT",
-  "description": "Official PHP SDK for Safepay API",
+  "description": "Official PHP SDK for Safepay Checkout",
   "authors": [
     {
       "name": "Matiullah",

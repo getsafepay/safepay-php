@@ -21,13 +21,11 @@ abstract class Base
 
     const SANDBOX_BASE_URL = 'https://sandbox.api.getsafepay.com';
 
-    const ACCOUNTS_ROUTE = '/components';
-
-    const CARDS_ROUTE = '/checkout/pay';
+    const CHECKOUT_ROUTE = '/checkout/pay';
 
     const TRANSACTION_ENDPOINT = '/order/v1/init';
 
-    const  SANDBOX_API_URL = 'https://sandbox.api.getsafepay.com/';
+    const SANDBOX_API_URL = 'https://sandbox.api.getsafepay.com/';
 
     const PRODUCTION_API_URL = 'https://api.getsafepay.com/';
 }
