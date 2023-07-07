@@ -55,7 +55,7 @@ class Payments extends Base
 
             $args["amount"] = floatval($data['amount']);
 
-            $args["currency"] = $this->options['currency'];
+            $args["currency"] = $data['currency'];
 
             $args["client"] = $this->options['apiKey'];
         } catch (\Exception $e) {
