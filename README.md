@@ -42,7 +42,9 @@ $response = $Safepay->payments->getToken(['amount'=>1000,'currency'=>'PKR']);
 
 # Checkout
 
-Create checkout link
+Create checkout link.
+
+For mobile, set the `source` to `mobile` as opposed to `custom` in the payload. You also do not need to pass a `success_url` and a `failure_url`.
 
 ```
 $link = $Safepay->checkout->create([
